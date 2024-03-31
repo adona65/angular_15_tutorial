@@ -1,0 +1,75 @@
+<div class="content">
+  <app-highlight-card title="Miscellaneous changes"></app-highlight-card>
+
+  <!-- Functional router guards -->
+  <h2>Functional router guards</h2>
+  <p>Implementing router guards is now simplified. Let say we want define a guard which verifies if the user is logged in.<br>
+    Previously to Angular 15, we would have write something like it:<br>
+  </p>
+  <img class="pet-img" ngSrc="/assets/old-guard.PNG" width="600" height="300">
+  <p>
+    LoginService implements most of the logic and in the guard we only invoke isLoggedIn(). Even though the guard is pretty simple,
+    we have lots of boilerplate code.<br>
+    With the new functional router guards, you can refactor this code down to:<br>
+  </p>
+  <img class="pet-img" ngSrc="/assets/new-guard.PNG" width="600" height="150">
+
+  <!-- Better stack traces -->
+  <h2>Better stack traces</h2>
+  <p>
+    Angular 15 greatly improve stacktrace. Let's imagine we would face an error, and face a stacktrace like it:<br><br>
+  </p>
+  <p><i>ERROR Error: Uncaught (in promise): Error<br>
+    Error<br>
+    at app.component.ts:18:11<br>
+    at Generator.next (&lt;anonymous&gt;)<br>
+    at asyncGeneratorStep (asyncToGenerator.js:3:1)<br>
+    at _next (asyncToGenerator.js:25:1)<br>
+    at _ZoneDelegate.invoke (zone.js:372:26)<br>
+    at Object.onInvoke (core.mjs:26378:33)<br>
+    at _ZoneDelegate.invoke (zone.js:371:52)<br>
+    at Zone.run (zone.js:134:43)<br>
+    at zone.js:1275:36<br>
+    at _ZoneDelegate.invokeTask (zone.js:406:31)<br>
+    at resolvePromise (zone.js:1211:31)<br>
+    at zone.js:1118:17<br>
+    at zone.js:1134:33<br></i><br>
+  </p>
+  <p>
+    This snippet suffers from two main problems:
+  </p>
+  <ol style="list-style-type: circle">
+    <li>There’s only one line corresponding to code that the developer has authored. Everything else is coming from third-party
+      dependencies (Angular framework, Zone.js, RxJS)</li>
+    <li>There’s no information about what user interaction caused the error</li>
+  </ol>
+  <p>
+    Thanks to Angular 15, this stacktrace is simplified to:<br><br>
+  </p>
+  <p>
+    <i>ERROR Error: Uncaught (in promise): Error<br>
+      Error<br>
+      at app.component.ts:18:11<br>
+      at fetch (async)<br>
+      at (anonymous) (app.component.ts:4)<br>
+      at request (app.component.ts:4)<br>
+      at (anonymous) (app.component.ts:17)<br>
+      at submit (app.component.ts:15)<br>
+      at AppComponent_click_3_listener (app.component.html:4)<br><br>
+    </i>
+  </p>
+  <p>Here we can follow the execution from the button press in the AppComponent all the way to the error.</p>
+
+  <!-- Better stack traces -->
+  <h2>Release MDC-based components to stable</h2>
+  <p>The refactoring of the Angular material components based on Material Design Components for Web (MDC) is now done.<br>
+    Visit <a href="https://blog.angular.io/angular-v15-is-now-available-df7be7f2f4c8" target=”_blank”>the migration guide</a> for
+    more information.</p>
+
+  <!-- DatePipe default option -->
+  <h2>Provide an ability to configure default options for DatePipe</h2>
+  <p>This feature allows to globally change the default formatting configuration for DatePipe.For example, the configuration
+    below will enable shortDate format for all the places you use DatePipe in your application.</p><br>
+  <img class="pet-img" ngSrc="/assets/default-date.PNG" width="300" height="150">
+
+</div>

@@ -1,0 +1,14 @@
+<div class="content">
+  <app-highlight-card title="Standalone Components"></app-highlight-card>
+
+  <h1>Data in this page is displayed by a standalone component.</h1>
+  <section class="hero-section">
+    <h2 class="hero-text">
+      Discover Pets to walk near you
+    </h2>
+  </section>
+  <article class="pet-list">
+    <!-- In "let i = index", index refers to the element's index during iteration over *ngFor loop. -->
+    <app-dogs-list-cards *ngFor="let dog of standalonesService.dogs; let i = index" [index]="i" [dog]="dog"></app-dogs-list-cards>
+  </article>
+</div>

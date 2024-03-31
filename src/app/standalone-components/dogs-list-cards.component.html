@@ -1,0 +1,13 @@
+<article class="pet-card">
+  <img class="pet-img" src="{{dog.photoUrl}}" alt="Photo of {{dog.name}}">
+  <p class="pet-headline">Meet <span class="pet-name">{{dog.name}}</span></p>
+  <p class="pet-description">
+    <span class="pet-name">{{dog.ownerName}}</span> wants you to know this about {{dog.name}}:
+    {{dog.description}}
+  </p>
+  <!--
+    Here we can add a link to the detailed view component with a router link attribute because RouterModule is added to
+    imports array of our standalone components.
+  -->
+  <p class="pet-learn-more"><a href="/details/{{index}}">Learn More</a></p>
+</article>
