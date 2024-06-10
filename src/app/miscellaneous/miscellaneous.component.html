@@ -6,13 +6,13 @@
   <p>Implementing router guards is now simplified. Let say we want define a guard which verifies if the user is logged in.<br>
     Previously to Angular 15, we would have write something like it:<br>
   </p>
-  <img class="pet-img" ngSrc="/assets/old-guard.PNG" width="600" height="300">
+  <img ngSrc="/assets/old-guard.PNG" width="600" height="300">
   <p>
     LoginService implements most of the logic and in the guard we only invoke isLoggedIn(). Even though the guard is pretty simple,
     we have lots of boilerplate code.<br>
     With the new functional router guards, you can refactor this code down to:<br>
   </p>
-  <img class="pet-img" ngSrc="/assets/new-guard.PNG" width="600" height="150">
+  <img ngSrc="/assets/new-guard.PNG" width="600" height="150">
 
   <!-- Better stack traces -->
   <h2>Better stack traces</h2>
@@ -70,6 +70,6 @@
   <h2>Provide an ability to configure default options for DatePipe</h2>
   <p>This feature allows to globally change the default formatting configuration for DatePipe.For example, the configuration
     below will enable shortDate format for all the places you use DatePipe in your application.</p><br>
-  <img class="pet-img" ngSrc="/assets/default-date.PNG" width="300" height="150">
+  <img ngSrc="/assets/default-date.PNG" width="300" height="150">
 
 </div>

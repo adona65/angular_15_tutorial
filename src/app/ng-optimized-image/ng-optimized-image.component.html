@@ -2,25 +2,25 @@
   <app-highlight-card title="NgOptimizedImage"></app-highlight-card>
 
   <h3>Displayed with classical Html (width 200 / height 300)</h3>
-  <img class="pet-img" src="/assets/painted-cat.jpg" width="200" height="300">
+  <img src="/assets/painted-cat.jpg" width="200" height="300">
 
   <h3>Displayed with NgOptimizedImage (width 200 + height 300)</h3>
   <!-- Beware: using NgOptimizedImage, image won't charge if we didn't define width+height or fill attributes. -->
-  <img class="pet-img" ngSrc="/assets/painted-cat.jpg" priority width="200" height="300">
+  <img ngSrc="/assets/painted-cat.jpg" priority width="200" height="300">
 
   <h3>Displayed with NgOptimizedImage (fill containing div with 300 / height 200)</h3>
   <div style="background-color: red;width: 300px; height: 200px; position: relative">
-    <img class="pet-img" ngSrc="/assets/painted-cat.jpg" fill>
+    <img ngSrc="/assets/painted-cat.jpg" fill>
   </div>
 
   <h3>Displayed with NgOptimizedImage (fill containing div with 300 / height 200 + object-fit)</h3>
   <div style="background-color: red;width: 300px; height: 200px; position: relative">
-    <img class="pet-img" ngSrc="/assets/painted-cat.jpg" fill style="object-fit: contain">
+    <img ngSrc="/assets/painted-cat.jpg" fill style="object-fit: contain">
   </div>
 
   <h3>Displayed with NgOptimizedImage (fill containing div with 300 / height 200 + object-position & object-fit)</h3>
   <div style="background-color: red;width: 300px; height: 200px; position: relative">
-    <img class="pet-img" ngSrc="/assets/painted-cat.jpg" fill style="object-fit: scale-down; object-position: right top;">
+    <img ngSrc="/assets/painted-cat.jpg" fill style="object-fit: scale-down; object-position: right top;">
   </div>
 
 </div>
